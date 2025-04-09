@@ -1,0 +1,21 @@
+﻿@model ICollection<InvoiceLine>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Track ID</th>
+            <th>Track</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var invoiceLine in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => invoiceLine.TrackId)</td>
+                <td>@Html.DisplayFor(modelItem => invoiceLine.Track.Name)</td>
+                <td>@Html.DisplayFor(modelItem => invoiceLine.UnitPrice)</td>
+            </tr>
+        }
+    </tbody>
+</table>
